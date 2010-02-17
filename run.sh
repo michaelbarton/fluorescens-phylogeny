@@ -19,6 +19,7 @@ mkdir alignment
 
 cd ./alignment/
   cp ../tmp/rRNA.filter.fasta rRNA.align
+  java -jar ../lib/readseq.jar -f Phylip -o rRNA.phylip rRNA.align
 cd ..
 
 rm -rf tmp
