@@ -6,9 +6,9 @@ fi
 
 mkdir tmp
 cd ./tmp/
-  cat ../src_data/rRNA/*.fasta > rRNA.fasta
+  cat ../src_data/rRNA/*.fna > rRNA.fna
   cp ../src_data/alignment/green_genes.align .
-  mothur "#align.seqs(candidate=rRNA.fasta, template=green_genes.align)"
+  mothur "#align.seqs(candidate=rRNA.fna, template=green_genes.align)"
   mothur "#filter.seqs(fasta=rRNA.align,vertical=T)"
 cd ..
 
