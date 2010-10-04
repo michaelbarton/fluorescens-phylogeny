@@ -6,10 +6,17 @@ fi
 
 mkdir tmp
 cd ./tmp/
+<<<<<<< HEAD
   cat ../src_data/rRNA/*.fna > rRNA.fna
   cp ../src_data/alignment/green_genes.align .
   mothur "#align.seqs(candidate=rRNA.fna, template=green_genes.align)"
   mothur "#filter.seqs(fasta=rRNA.align,vertical=T)"
+=======
+  cp ../src_data/rRNA/sequences.fna sequences.fna
+  cp ../src_data/alignment/green_genes.align .
+  mothur "#align.seqs(candidate=sequences.fna, template=green_genes.align)"
+  mothur "#filter.seqs(fasta=sequences.align,vertical=T)"
+>>>>>>> Updated rRNA sequences to include all pseudomonas
 cd ..
 
 if [ -d alignment ]; then
@@ -18,8 +25,8 @@ fi
 mkdir alignment
 
 cd ./alignment/
-  cp ../tmp/rRNA.filter.fasta rRNA.align
-  java -jar ../lib/readseq.jar -f Phylip -o rRNA.phylip rRNA.align
+  cp ../tmp/sequences.filter.fasta sequences.align
+  java -jar ../lib/readseq.jar -f Phylip -o sequences.phylip sequences.align
 cd ..
 
 rm -rf tmp
