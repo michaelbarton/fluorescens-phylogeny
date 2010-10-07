@@ -29,4 +29,15 @@ cd ./alignment/
   java -jar ../lib/readseq.jar -f Phylip -o sequences.phylip sequences.align
 cd ..
 
-rm -rf tmp
+rm tmp/*
+cd ./tmp/
+  cp ../alignment/sequences.phylip .
+  raxml -s sequences.phylip \
+        -n tree.txt         \
+        -m GTRMIX           \
+        #-o Out/1-722
+        #-q groups.txt \
+        #-f t \
+        #-N 100
+cd ..
+
